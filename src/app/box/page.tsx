@@ -1,25 +1,26 @@
 "use client";
 import React from "react";
+import { useCardContext } from "../context/CardContext";
 
 export default function text() {
-  const [card, setCard] = React.useState<string[]>([]);
+  const { cardValues, updateCardValue } = useCardContext();
 
   const inputChange1 = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value);
+    updateCardValue(0, e.target.value);
   };
   const inputChange2 = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value);
+    updateCardValue(1, e.target.value);
   };
 
   const inputChange3 = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value);
+    updateCardValue(2, e.target.value);
   };
   const inputChange4 = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value);
+    updateCardValue(3, e.target.value);
   };
 
   const inputChange5 = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value);
+    updateCardValue(4, e.target.value);
   };
 
   return (
@@ -27,12 +28,14 @@ export default function text() {
       <input
         type="text"
         placeholder="Card 1"
+        value={cardValues[0]}
         className="bg-gray-400 p-3 rounded-md"
         onChange={inputChange1}
       />
       <input
         type="text"
         placeholder="Card 2"
+        value={cardValues[1]}
         className="bg-gray-400 p-3 rounded-md"
         onChange={inputChange2}
       />
@@ -40,18 +43,21 @@ export default function text() {
       <input
         type="text"
         placeholder="Card 3"
+        value={cardValues[2]}
         className="bg-gray-400 p-3 rounded-md"
         onChange={inputChange3}
       />
       <input
         type="text"
         placeholder="Card 4"
+        value={cardValues[3]}
         className="bg-gray-400 p-3 rounded-md"
         onChange={inputChange4}
       />
       <input
         type="text"
         placeholder="Card 5"
+        value={cardValues[4]}
         className="bg-gray-400 p-3 rounded-md"
         onChange={inputChange5}
       />

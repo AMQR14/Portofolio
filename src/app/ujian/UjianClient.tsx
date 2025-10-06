@@ -1,15 +1,8 @@
 "use client";
 import React from "react";
-import { Metadata } from "next";
-import { title } from "./ujian_544241094";
 import { useCardContext } from "../context/CardContext";
 
-// export const metadata: Metadata = {
-//   title: title.title,
-//   description: title.description,
-// };
-
-export default function page() {
+export default function UjianClient() {
   const { cardValues } = useCardContext();
 
   return (
